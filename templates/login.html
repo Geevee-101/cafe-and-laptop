@@ -1,0 +1,35 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% from 'bootstrap5/utils.html' import render_messages %}
+{% include "header.html" %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/daan-evers-tKN1WXrzQ3s-unsplash.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h2>Log In</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h5 class="post-subtitle">
+                            {{ render_messages() }}
+                            {{ render_form(form) }}
+                        </h5>
+                        <!-- Divider-->
+                        <hr class="my-4" />
+                        <!-- Register-->
+                        <div class="d-flex mb-4">
+                            <a class="btn btn-primary text-uppercase" href="{{ url_for('register') }}">Create New Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+{% include "footer.html" %}

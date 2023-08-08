@@ -1,0 +1,66 @@
+{% include "header.html" %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/daan-evers-tKN1WXrzQ3s-unsplash.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-10 col-xl-10">
+                        <div class="site-heading">
+                            <h1>Cafe and Laptop</h1>
+                            <p><span class="subheading">Find and share a work-friendly cafe in your area</span></p>
+                            {% if not current_user.is_authenticated: %}
+                                <div class="d-flex justify-content-center mb-4">
+                                    <a class="btn btn-primary text-uppercase" href="{{ url_for('login') }}">Log In</a>
+                                </div>
+                                <div class="d-flex justify-content-center mb-4">
+                                    <a class="btn btn-primary text-uppercase" href="{{ url_for('register') }}">Create New Account</a>
+                                </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-center mb-4">
+                                <a class="btn btn-primary text-uppercase" href="{{ url_for('show_all_cafes') }}">
+                                    Browse Cafes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 py-1" id="hanging-icons">
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <img src="static/assets/icon/geo-alt-fill.svg" alt="location icon" height="30">
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Find</h3>
+                    <h5 class="post-subtitle">
+                        Search for cafes, shared and rated by the community.
+                    </h5>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <img src="static/assets/icon/people-fill.svg" alt="people icon" height="30">
+                </div>
+                <div>
+                    <h3 class="fs-2 text-body-emphasis">Share</h3>
+                    <h5 class="post-subtitle">
+                        Discovered a great cafe? Tell everyone about it.
+                    </h5>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <img src="static/assets/icon/star-fill.svg" alt="star icon" height="30">
+                </div>
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">Review</h3>
+                    <h5 class="post-subtitle">
+                        Write your thoughts and help others find the best cafes.
+                    </h5>
+                </div>
+              </div>
+            </div>
+        </div>
+{% include "footer.html" %}

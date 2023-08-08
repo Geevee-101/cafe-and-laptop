@@ -1,0 +1,113 @@
+{% include "header.html" %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/daan-evers-tKN1WXrzQ3s-unsplash.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Browse Cafes</h1>
+                            <h2 class="subheading">Curated by the community</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-sm-12 col-md-11 col-lg-9 col-xl-7">
+                        {% if current_user.is_authenticated: %}
+                        <div class="d-flex mb-4">
+                            <a class="btn btn-primary text-uppercase" href="{{ url_for('add_new_cafe') }}">
+                                Add New Cafe
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="d-flex mb-4">
+                            <a class="btn btn-primary text-uppercase" href="{{ url_for('login') }}">
+                                Log In To Add New Cafe
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if all_cafes == [] %}
+                            <!-- Divider-->
+                            <hr class="my-4" />
+                            <h2 class="post-title">Cafe database is empty</h2>
+                        {% else %}
+                            {% for cafe in all_cafes %}
+                            <!-- Divider-->
+                            <hr class="my-4" />
+                            <a href="{{ url_for('show_cafe', cafe_id=cafe.id) }}">
+                              <div class="post-preview">
+                                <div class="cafe-pic-container">
+                                    <img src="{{ cafe.img_url }}" alt="cafe picture" width="175" height="98">
+                                </div>
+                                <div class="cafe-detail-container">
+                                    <h2 class="post-title">{{ cafe.name }}</h2>
+                                    <h5 class="post-subtitle">
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/hand-thumbs-up-fill.svg') }}" alt="thumbs up">
+                                                {% if cafe.approval == None: %}
+                                                    -
+                                                {% else %}
+                                                    {{ (cafe.approval)|round|int }}%
+                                                {% endif %}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/geo-alt-fill.svg') }}" alt="location">
+                                            {{ cafe.location }}
+                                        </div>
+                                    </h5>
+                                    <h5 class="post-subtitle">
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/plug-fill.svg') }}" alt="socket">
+                                            {% if cafe.has_sockets: %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/restroom-mark-4-svgrepo-com.svg') }}" alt="restroom", height="16">
+                                            {% if cafe.has_toilet: %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/wifi.svg') }}" alt="wifi">
+                                            {% if cafe.has_wifi: %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/telephone-fill.svg') }}" alt="can take calls">
+                                            {% if cafe.can_take_calls: %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/chair-free-1-svgrepo-com.svg') }}" alt="seats", height="16">
+                                            {{ cafe.seats }}
+                                        </div>
+                                        <div class="detail">
+                                            <img src="{{ url_for('static', filename='assets/icon/cup-hot-fill.svg') }}" alt="coffee price">
+                                            MYR {{ cafe.coffee_price }}
+                                        </div>
+                                    </h5>
+                                </div>
+                              </div>
+                            </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </article>
+{% include "footer.html" %}

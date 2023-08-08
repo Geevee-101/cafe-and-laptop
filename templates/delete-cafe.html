@@ -1,0 +1,33 @@
+
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ cafe.img_url }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{ cafe.name }}</h1>
+                            <h2>Delete Cafe</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h5 class="post-subtitle">
+                            <p>Are you sure you want to delete this cafe?</p>
+                            {{ render_form(form) }}
+                        </h5>
+                        <div class="d-flex mb-4">
+                            <a class="btn btn-primary text-uppercase" href="{{ url_for('show_cafe', cafe_id=cafe.id) }}">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+{% include "footer.html" %}
