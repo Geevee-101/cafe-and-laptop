@@ -10792,7 +10792,6 @@ header.masthead .post-heading .meta a {
 }
 .post-subtitle {
   font-weight: 350;
-  line-height: 0.8em;
 }
 
 .post-subtitle > img{
@@ -10815,6 +10814,14 @@ header.masthead .post-heading .meta a {
 }
 .post-subtitle-main > img{
   padding-right: 0.05em;
+}
+.post-subtitle-detail {
+  font-weight: 350;
+  line-height: 0.8em;
+}
+.post-subtitle-review {
+  font-weight: 390;
+  font-size: 0.9em;
 }
 .detail-title{
     padding-bottom: 0.3em;

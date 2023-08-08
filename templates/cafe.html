@@ -27,7 +27,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/geo-alt-fill.svg') }}" alt="location">
                                 Location: {{ cafe.location }}
                                 </h5>
@@ -39,7 +39,7 @@
                                 </a>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/plug-fill.svg') }}" alt="socket">
                                 Sockets:
                                 {% if cafe.has_sockets: %}
@@ -50,7 +50,7 @@
                                 </h5>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/restroom-mark-4-svgrepo-com.svg') }}" alt="restroom" height="16">
                                 Restrooms:
                                 {% if cafe.has_toilet: %}
@@ -61,7 +61,7 @@
                                 </h5>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/wifi.svg') }}" alt="wifi">
                                 Wifi:
                                 {% if cafe.has_wifi: %}
@@ -72,7 +72,7 @@
                                 </h5>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/telephone-fill.svg') }}" alt="can take calls">
                                 Can take calls:
                                 {% if cafe.can_take_calls: %}
@@ -83,14 +83,14 @@
                                 </h5>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/chair-free-1-svgrepo-com.svg') }}" alt="seats" height="16">
                                 Number of seats:
                                 {{ cafe.seats }}
                                 </h5>
                             </div>
                             <div class="detail">
-                                <h5 class="post-subtitle">
+                                <h5 class="post-subtitle-detail">
                                 <img src="{{ url_for('static', filename='assets/icons/cup-hot-fill.svg') }}" alt="coffee price">
                                 Black coffee price:
                                 MYR {{ cafe.coffee_price }}
@@ -137,7 +137,7 @@
                                             <h5 class="post-subtitle-name">
                                                 {{ review.review_author.name }}
                                             </h5>
-                                            <h5 class="post-subtitle">
+                                            <h5 class="post-subtitle-review">
                                                 {% if review.like == True %}
                                                     <img src="{{ url_for('static', filename='assets/icons/hand-thumbs-up-fill.svg') }}" alt="thumbs up">
                                                 {% else %}
