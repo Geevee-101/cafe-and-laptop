@@ -10786,39 +10786,57 @@ header.masthead .post-heading .meta a {
 .post-preview > .cafe-detail-container {
     width: 19.5em;
 }
-.post-preview > .cafe-detail-container > .post-title {
+.post-title {
   font-size: 1.5rem;
   margin-bottom: 0.1rem;
 }
-.post-preview > .cafe-detail-container > .post-subtitle {
-  font-weight: 300;
-  margin-bottom: 0.625rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
 .post-subtitle {
   font-weight: 300;
-  margin-bottom: 0.625rem;
 }
 
+.post-subtitle > img{
+  padding-right: 0.05em;
+}
 .post-subtitle-footer {
   font-weight: 300;
   margin-bottom: 0.625rem;
   font-size: 1rem;
 }
+.post-subtitle-name {
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 0em
+}
+.post-subtitle-main {
+  font-size: 1em;
+  font-weight: 300;
 
-.post-preview > .cafe-detail-container > .post-subtitle > .detail {
-  padding-right: 0.5em
+}
+.post-subtitle-main > img{
+  padding-right: 0.05em;
+}
+.detail-title{
+}
+.detail-main {
+    padding-bottom: 0.3em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.detail-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.detail {
+  padding-right:0.5em;
 }
 
-.post-preview > .cafe-detail-container > .post-subtitle > .detail > img{
-  padding-right: 0.05em
+.detail > img{
+  padding-right: 0.05em;
 }
 
 .detail-map{
-  padding-top: 0.5em;
   padding-bottom: 1em;
 }
 
