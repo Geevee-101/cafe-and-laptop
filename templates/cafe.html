@@ -119,9 +119,13 @@
                             <ul class="reviewList">
                                 {% if cafe.cafe_reviews == []: %}
                                 <li>
-                                    <h5 class="post-subtitle-main">
-                                        No reviews posted yet. Be the first to post a review.
-                                    </h5>
+                                    <div class="reviewImage">
+                                    </div>
+                                    <div class="reviewText">
+                                        <h5 class="post-subtitle-main">
+                                            No reviews posted yet. Be the first to post a review.
+                                        </h5>
+                                    </div>
                                 </li>
                                 {% else %}
                                     {% for review in cafe.cafe_reviews: %}
