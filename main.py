@@ -8,14 +8,15 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 from flask_gravatar import Gravatar
+import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'cafeAndLaptop'
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///cafes.db")
 db = SQLAlchemy()
 db.init_app(app)
 
@@ -343,4 +344,4 @@ def delete_cafe(cafe_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
