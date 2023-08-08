@@ -116,33 +116,36 @@
                         <!-- Reviews area-->
                         <h2 class="post-title">Reviews</h2>
                         <div>
-
-                                <ul class="reviewList">
-                                    {% if cafe.cafe_reviews == []: %}
+                            <ul class="reviewList">
+                                {% if cafe.cafe_reviews == []: %}
+                                <li>
+                                    <h5 class="post-subtitle-main">
                                         No reviews posted yet. Be the first to post a review.
-                                    {% else %}
-                                        {% for review in cafe.cafe_reviews: %}
-                                        <li>
-                                            <div class="reviewImage">
-                                              <img src="{{ review.review_author.email | gravatar }}"/>
-                                            </div>
-                                            <div class="reviewText">
-                                                <h5 class="post-subtitle-name">
-                                                    {{ review.review_author.name }}
-                                                </h5>
-                                                <h5 class="post-subtitle">
-                                                    {% if review.like == True %}
-                                                        <img src="{{ url_for('static', filename='assets/icons/hand-thumbs-up-fill.svg') }}" alt="thumbs up">
-                                                    {% else %}
-                                                        <img src="{{ url_for('static', filename='assets/icons/hand-thumbs-down-fill.svg') }}" alt="thumbs down">
-                                                    {% endif %}
-                                                    {{ review.text|safe }}
-                                                </h5>
-                                            </div>
-                                        </li>
-                                        {% endfor %}
-                                    {% endif %}
-                                </ul>
+                                    </h5>
+                                </li>
+                                {% else %}
+                                    {% for review in cafe.cafe_reviews: %}
+                                    <li>
+                                        <div class="reviewImage">
+                                          <img src="{{ review.review_author.email | gravatar }}"/>
+                                        </div>
+                                        <div class="reviewText">
+                                            <h5 class="post-subtitle-name">
+                                                {{ review.review_author.name }}
+                                            </h5>
+                                            <h5 class="post-subtitle">
+                                                {% if review.like == True %}
+                                                    <img src="{{ url_for('static', filename='assets/icons/hand-thumbs-up-fill.svg') }}" alt="thumbs up">
+                                                {% else %}
+                                                    <img src="{{ url_for('static', filename='assets/icons/hand-thumbs-down-fill.svg') }}" alt="thumbs down">
+                                                {% endif %}
+                                                {{ review.text|safe }}
+                                            </h5>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
                         </div>
                         <div>
                         <br />

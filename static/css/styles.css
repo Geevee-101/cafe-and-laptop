@@ -10788,10 +10788,11 @@ header.masthead .post-heading .meta a {
 }
 .post-title {
   font-size: 1.5rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.3rem;
 }
 .post-subtitle {
-  font-weight: 300;
+  font-weight: 350;
+  line-height: 0.8em;
 }
 
 .post-subtitle > img{
@@ -10803,14 +10804,14 @@ header.masthead .post-heading .meta a {
   font-size: 1rem;
 }
 .post-subtitle-name {
-  font-size: 1em;
-  font-weight: 300;
-  margin-bottom: 0em
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 0.2em
 }
 .post-subtitle-main {
   font-size: 1em;
-  font-weight: 300;
-
+  font-weight: 350;
+  line-height: 0.8em;
 }
 .post-subtitle-main > img{
   padding-right: 0.05em;
