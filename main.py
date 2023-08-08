@@ -136,8 +136,10 @@ class ReviewForm(FlaskForm):
     text = TextAreaField('Tell us about your experience at this cafe', validators=[InputRequired(), Length(max=250)])
     submit = SubmitField("POST REVIEW")
 
+
 class DeleteForm(FlaskForm):
     submit = SubmitField("YES, DELETE CAFE")
+
 
 # Gravatar
 gravatar = Gravatar(app,
