@@ -11,4 +11,4 @@ This site is for users who want to find a great cafe to work from.
 
 A user does not need to register to browse the cafe list. But registered users gains privilege to add, edit, update, and delete a cafe from the database. Regsitered users can also leave reviews while giving it a thumbs up or down. The site will collate all the user ratings to display the overall rating of a cafe.
 
-I wanted to build a website that showcases my backend skills in Python. As such, I decided to use Bootstrap to speed up the frontend work.
+I wanted to build a website that showcases my backend skills in Python. As such, I decided to use Bootstrap to speed up the frontend work. I started with a free Bootstrap template before modifying it to my liking.
